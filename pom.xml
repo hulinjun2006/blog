@@ -11,6 +11,7 @@
 		<module>blog-core</module>
 		<module>blog-web</module>
 		<module>blog-admin</module>
+		<module>blog-spider</module>
 	</modules>
 
 	<name>blog</name>
@@ -76,7 +77,7 @@
             </properties>
             <build>
                 <!-- 产生的构件的文件名，默认值是${artifactId}-${version}-->
-                <finalName>${artifactId}-${version}</finalName>
+                <finalName>${project.artifactId}-${project.version}</finalName>
             </build>
         </profile>
         <!--测试配置-->
@@ -87,7 +88,7 @@
             </properties>
             <build>
                 <!-- 产生的构件的文件名-->
-                <finalName>${artifactId}</finalName>
+                <finalName>${project.artifactId}</finalName>
             </build>
         </profile>
         <!--生产配置-->
@@ -98,7 +99,7 @@
             </properties>
             <build>
                 <!-- 产生的构件的文件名-->
-                <finalName>${artifactId}</finalName>
+                <finalName>${project.artifactId}</finalName>
             </build>
         </profile>
     </profiles>

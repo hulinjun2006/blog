@@ -30,8 +30,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,7 +56,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @Controller
 @RequestMapping(value = "/passport")
 public class PassportController {
-    Logger log = LoggerFactory.getLogger(PassportController.class);
+
     @Autowired
     private AppProperties config;
     @Autowired
@@ -67,10 +65,6 @@ public class PassportController {
     @BussinessLog("进入登录页面")
     @GetMapping("/login")
     public ModelAndView login(Model model) {
-        Subject subject = SecurityUtils.getSubject();
-        if (subject.isAuthenticated()||subject.isRemembered()){
-            return ResultUtil.redirect("/");
-        }
         model.addAttribute("enableKaptcha", config.getEnableKaptcha());
         return ResultUtil.view("/login");
     }

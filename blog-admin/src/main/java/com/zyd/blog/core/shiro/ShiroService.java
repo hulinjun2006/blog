@@ -23,7 +23,6 @@ import com.zyd.blog.business.entity.Resources;
 import com.zyd.blog.business.entity.User;
 import com.zyd.blog.business.service.SysResourcesService;
 import com.zyd.blog.business.service.SysUserService;
-import com.zyd.blog.controller.RestApiController;
 import com.zyd.blog.core.shiro.realm.ShiroRealm;
 import com.zyd.blog.framework.holder.SpringContextHolder;
 import lombok.extern.slf4j.Slf4j;
@@ -35,8 +34,6 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.mgt.DefaultFilterChainManager;
 import org.apache.shiro.web.filter.mgt.PathMatchingFilterChainResolver;
 import org.apache.shiro.web.servlet.AbstractShiroFilter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -63,7 +60,7 @@ public class ShiroService {
     private SysResourcesService resourcesService;
     @Autowired
     private SysUserService userService;
-    Logger log = LoggerFactory.getLogger(ShiroService.class);
+
     /**
      * 初始化权限
      */
@@ -71,7 +68,7 @@ public class ShiroService {
         /*
             配置访问权限
             - anon:所有url都都可以匿名访问
-            - authc: 需要认证才能进行访问
+            - authc: 需要认证才能进行访问（此处指所有非匿名的路径都需要登陆才能访问）
             - user:配置记住我或认证通过可以访问
          */
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
@@ -94,7 +91,8 @@ public class ShiroService {
                 filterChainDefinitionMap.put(resources.getUrl(), permission);
             }
         }
-        filterChainDefinitionMap.put("/**", "authc");
+        // 本博客中并不存在什么特别关键的操作，所以直接使用user认证。如果有朋友是参考本博客的shiro开发其他安全功能（比如支付等）时，建议针对这类操作使用authc权限 by yadong.zhang
+        filterChainDefinitionMap.put("/**", "user");
         return filterChainDefinitionMap;
     }
 

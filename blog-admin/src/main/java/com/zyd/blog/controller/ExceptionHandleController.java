@@ -27,8 +27,6 @@ import com.zyd.blog.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AccountException;
 import org.apache.shiro.authz.UnauthorizedException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -49,7 +47,7 @@ import java.lang.reflect.UndeclaredThrowableException;
 @Slf4j
 @ControllerAdvice
 public class ExceptionHandleController {
-    Logger log = LoggerFactory.getLogger(ExceptionHandleController.class);
+
     /**
      * Shiro权限认证异常
      *

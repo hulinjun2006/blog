@@ -22,8 +22,6 @@ package com.zyd.blog.controller;
 import com.zyd.blog.plugin.kaptcha.Captcha;
 import com.zyd.blog.plugin.kaptcha.GifCaptcha;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -43,7 +41,6 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 public class KaptchaController {
 
-    Logger log = LoggerFactory.getLogger(KaptchaController.class);
     @GetMapping("/getKaptcha")
     @ResponseBody
     public void getKaptcha(HttpServletResponse response) {

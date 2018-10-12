@@ -37,8 +37,6 @@ import com.zyd.blog.framework.object.ResponseVO;
 import com.zyd.blog.util.RestClientUtil;
 import com.zyd.blog.util.ResultUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
@@ -73,7 +71,7 @@ public class RestApiController {
     private BizArticleService articleService;
     @Autowired
     private SysNoticeService noticeService;
-    Logger log = LoggerFactory.getLogger(RestApiController.class);
+
     @PostMapping("/autoLink")
     public ResponseVO autoLink(@Validated Link link, BindingResult bindingResult) {
         log.info("申请友情链接......");

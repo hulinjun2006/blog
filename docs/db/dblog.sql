@@ -241,7 +241,7 @@ CREATE TABLE `sys_config` (
 -- ----------------------------
 -- Records of sys_config
 -- ----------------------------
-INSERT INTO `sys_config` VALUES ('1', 'DBlog是一款简洁美观、自适应的Java博客系统。使用springboot开发，前端使用Bootstrap。支持移动端自适应，配有完备的前台和后台管理功能。', 'DBlog,开源博客', 'zhyd.me', '', 'http://localhost:8443', '博客', 'DBlog是一款简洁美观、自适应的Java博客系统', 'http://localhost:8443/img/favicon.ico', 'http://localhost:8443', '张亚东', 'yadong.zhang0415#gmail.com', '', '843977358', 'http://weibo.com/211230415', 'https://github.com/zhangyd-c', '0', '2018-12-19 23:07:52', '1', null, null, null, null, null, null, null, null, '2018-01-19 23:07:52', '2018-06-12 12:03:28');
+INSERT INTO `sys_config` VALUES ('1', 'DBlog是一款简洁美观、自适应的Java博客系统。使用springboot开发，前端使用Bootstrap。支持移动端自适应，配有完备的前台和后台管理功能。', 'DBlog,开源博客', 'zhyd.me', 'http://localhost:8085', 'http://localhost:8443', 'DBlog开源博客', 'DBlog是一款简洁美观、自适应的Java博客系统', 'http://localhost:8443/img/favicon.ico', 'http://localhost:8443', '张亚东', 'yadong.zhang0415#gmail.com', 'https://static.zhyd.me/static/img/wechat_account.jpg', '843977358', 'http://weibo.com/211230415', 'https://github.com/zhangyd-c', 0, '2018-11-11 11:11:11', 1, 'http://pe6duqm84.bkt.clouddn.com/', NULL, NULL, NULL, NULL, 'qrcode/wx_code.png', 'qrcode/zfb_code.png', 'NwHaYlGalDEpgxm46xBaC3T9', '2018-01-19 23:07:52', '2018-08-28 22:33:25');
 
 -- ----------------------------
 -- Table structure for sys_link
@@ -289,7 +289,9 @@ CREATE TABLE `sys_notice` (
 -- ----------------------------
 -- Records of sys_notice
 -- ----------------------------
-INSERT INTO `sys_notice` VALUES ('1', '1', 'RELEASE', 'asd', 'asd', '2018-05-22 10:26:26', '2018-05-22 10:26:34');
+INSERT INTO `sys_notice` VALUES (1, 1, 'RELEASE', 'DBlog开源博客', 'DBlog开源博客，一款超好用的Java版开源博客', '2018-05-22 10:26:26', '2018-08-28 23:37:46');
+INSERT INTO `sys_notice` VALUES (2, 1, 'RELEASE', '问题反馈', '在使用过程中，有问题请先参考相关文档，确实无法解决的，请优先提Issue，感谢各位老铁', '2018-08-28 23:40:45', '2018-08-28 23:40:45');
+
 
 -- ----------------------------
 -- Table structure for sys_resources
@@ -315,77 +317,79 @@ CREATE TABLE `sys_resources` (
 -- ----------------------------
 -- Records of sys_resources
 -- ----------------------------
-INSERT INTO `sys_resources` VALUES ('1', '用户管理', 'menu', null, null, '0', '1', '0', '1', 'fa fa-users', '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('2', '用户列表', 'menu', '/users', 'users', '1', '1', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('3', '新增用户', 'button', null, 'user:add', '2', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('4', '批量删除用户', 'button', null, 'user:batchDelete', '2', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('5', '编辑用户', 'button', null, 'user:edit,user:get', '2', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('6', '删除用户', 'button', null, 'user:delete', '2', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('7', '分配用户角色', 'button', null, 'user:allotRole', '2', '6', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('8', '资源角色管理', 'menu', null, null, '0', '2', '0', '1', 'fa fa-cogs', '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('9', '资源管理', 'menu', '/resources', 'resources', '8', '1', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('10', '新增资源', 'button', null, 'resource:add', '9', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('11', '批量删除资源', 'button', null, 'resource:batchDelete', '9', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('12', '编辑资源', 'button', null, 'resource:edit,resource:get', '9', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('13', '删除资源', 'button', null, 'resource:delete', '9', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('14', '角色管理', 'menu', '/roles', 'roles', '8', '2', '0', '1', '', '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('15', '新增角色', 'button', null, 'role:add', '14', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('16', '批量删除角色', 'button', null, 'role:batchDelete', '14', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('17', '编辑角色', 'button', null, 'role:edit,role:get', '14', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('18', '删除角色', 'button', null, 'role:delete', '14', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('19', '分配角色资源', 'button', null, 'role:allotResource', '14', '6', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('20', '文章管理', 'menu', null, null, '0', '3', '0', '1', 'fa fa-list', '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('21', '文章列表', 'menu', '/articles', 'articles', '20', '1', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('22', '发表文章', 'button', null, 'article:publish', '21', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('23', '批量删除文章', 'button', null, 'article:batchDelete', '21', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('24', '批量推送文章', 'button', null, 'article:batchPush', '21', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('25', '推送文章', 'button', null, 'article:push', '21', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('26', '置顶文章', 'button', null, 'article:top', '21', '6', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('27', '推荐文章', 'button', null, 'article:recommend', '21', '7', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('28', '编辑文章', 'button', null, 'article:edit,article:get', '21', '8', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('29', '删除文章', 'button', null, 'article:delete', '21', '9', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('30', '分类列表', 'menu', '/article/types', 'types', '20', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('31', '添加分类', 'button', null, 'type:add', '30', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('32', '批量删除分类', 'button', null, 'type:batchDelete', '30', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('33', '编辑分类', 'button', null, 'type:edit,type:get', '30', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('34', '删除分类', 'button', null, 'type:delete', '30', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('35', '标签列表', 'menu', '/article/tags', 'tags', '20', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('36', '添加标签', 'button', null, 'tag:add', '35', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('37', '批量删除标签', 'button', null, 'tag:batchDelete', '35', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('38', '编辑标签', 'button', null, 'tag:edit,tag:get', '35', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('39', '删除标签', 'button', null, 'tag:delete', '35', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('40', '网站管理', 'menu', null, null, '0', '4', '0', '1', 'fa fa-globe', '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('41', '友情链接', 'menu', '/links', 'links', '40', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('42', '添加友情链接', 'button', null, 'link:add', '41', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('43', '批量删除友情链接', 'button', null, 'link:batchDelete', '41', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('44', '编辑友情链接', 'button', null, 'link:edit,link:get', '41', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('45', '删除友情链接', 'button', null, 'link:delete', '41', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('46', '评论管理', 'menu', '/comments', 'comments', '40', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('47', '批量删除评论', 'button', null, 'comment:batchDelete', '46', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('48', '回复评论', 'button', null, 'comment:reply', '46', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('49', '审核评论', 'button', null, 'comment:audit', '46', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('50', '删除评论', 'button', null, 'comment:delete', '46', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('51', '模板管理', 'menu', '/templates', 'templates', '40', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('52', '添加模板', 'button', null, 'template:add', '51', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('53', '批量删除模板', 'button', null, 'template:batchDelete', '51', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('54', '编辑模板', 'button', null, 'template:edit,template:get', '51', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('55', '删除模板', 'button', null, 'template:delete', '51', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('56', '更新日志', 'menu', '/updates', 'updateLogs', '40', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('57', '添加更新日志', 'button', null, 'updateLog:add', '51', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('58', '批量删除更新日志', 'button', null, 'updateLog:batchDelete', '51', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('59', '编辑更新日志', 'button', null, 'updateLog:edit,updateLog:get', '51', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('60', '删除更新日志', 'button', null, 'updateLog:delete', '51', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('61', '公告管理', 'menu', '/notices', 'notices', '40', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('62', '添加公告', 'button', null, 'notice:add', '61', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('63', '批量删除公告', 'button', null, 'notice:batchDelete', '61', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('64', '编辑公告', 'button', null, 'notice:edit,notice:get', '61', '4', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('65', '删除公告', 'button', null, 'notice:delete', '61', '5', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('66', '发布公告', 'button', null, 'notice:release', '61', '6', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('67', '撤回公告', 'button', null, 'notice:withdraw', '61', '7', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('68', '测试页面', 'menu', null, null, '0', '5', '0', '1', 'fa fa-desktop', '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('69', 'icons图标', 'menu', '/icons', 'icons', '68', '2', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('70', 'shiro测试', 'menu', '/shiro', 'shiro', '68', '3', '0', '1', null, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
-INSERT INTO `sys_resources` VALUES ('71', '推送消息', 'menu', '/notice', 'notice', '40', NULL, '0', '1', '', '2018-07-05 11:30:24', '2018-07-05 11:30:24');
+INSERT INTO `sys_resources` VALUES (1, '用户管理', 'menu', '', '', 0, 4, 0, 1, 'fa fa-users', '2018-05-22 10:08:05', '2018-08-24 14:11:29');
+INSERT INTO `sys_resources` VALUES (2, '用户列表', 'menu', '/users', 'users', 1, 1, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (3, '新增用户', 'button', NULL, 'user:add', 2, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (4, '批量删除用户', 'button', NULL, 'user:batchDelete', 2, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (5, '编辑用户', 'button', NULL, 'user:edit,user:get', 2, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (6, '删除用户', 'button', NULL, 'user:delete', 2, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (7, '分配用户角色', 'button', NULL, 'user:allotRole', 2, 6, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (8, '权限管理', 'menu', '', '', 0, 3, 0, 1, 'fa fa-cogs', '2018-05-22 10:08:05', '2018-08-24 14:11:10');
+INSERT INTO `sys_resources` VALUES (9, '资源管理', 'menu', '/resources', 'resources', 8, 1, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (10, '新增资源', 'button', NULL, 'resource:add', 9, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (11, '批量删除资源', 'button', NULL, 'resource:batchDelete', 9, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (12, '编辑资源', 'button', NULL, 'resource:edit,resource:get', 9, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (13, '删除资源', 'button', NULL, 'resource:delete', 9, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (14, '角色管理', 'menu', '/roles', 'roles', 8, 2, 0, 1, '', '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (15, '新增角色', 'button', NULL, 'role:add', 14, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (16, '批量删除角色', 'button', NULL, 'role:batchDelete', 14, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (17, '编辑角色', 'button', NULL, 'role:edit,role:get', 14, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (18, '删除角色', 'button', NULL, 'role:delete', 14, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (19, '分配角色资源', 'button', NULL, 'role:allotResource', 14, 6, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (20, '文章管理', 'menu', '', '', 0, 1, 0, 1, 'fa fa-list', '2018-05-22 10:08:05', '2018-08-24 14:10:25');
+INSERT INTO `sys_resources` VALUES (21, '文章列表', 'menu', '/articles', 'articles', 20, 1, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (22, '发表文章', 'button', NULL, 'article:publish', 21, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (23, '批量删除文章', 'button', NULL, 'article:batchDelete', 21, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (24, '批量推送文章', 'button', NULL, 'article:batchPush', 21, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (25, '推送文章', 'button', NULL, 'article:push', 21, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (26, '置顶文章', 'button', NULL, 'article:top', 21, 6, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (27, '推荐文章', 'button', NULL, 'article:recommend', 21, 7, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (28, '编辑文章', 'button', NULL, 'article:edit,article:get', 21, 8, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (29, '删除文章', 'button', NULL, 'article:delete', 21, 9, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (30, '分类列表', 'menu', '/article/types', 'types', 20, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (31, '添加分类', 'button', NULL, 'type:add', 30, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (32, '批量删除分类', 'button', NULL, 'type:batchDelete', 30, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (33, '编辑分类', 'button', NULL, 'type:edit,type:get', 30, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (34, '删除分类', 'button', NULL, 'type:delete', 30, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (35, '标签列表', 'menu', '/article/tags', 'tags', 20, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (36, '添加标签', 'button', NULL, 'tag:add', 35, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (37, '批量删除标签', 'button', NULL, 'tag:batchDelete', 35, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (38, '编辑标签', 'button', NULL, 'tag:edit,tag:get', 35, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (39, '删除标签', 'button', NULL, 'tag:delete', 35, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (40, '网站管理', 'menu', '', '', 0, 2, 0, 1, 'fa fa-globe', '2018-05-22 10:08:05', '2018-08-24 14:10:45');
+INSERT INTO `sys_resources` VALUES (41, '友情链接', 'menu', '/links', 'links', 40, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (42, '添加友情链接', 'button', NULL, 'link:add', 41, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (43, '批量删除友情链接', 'button', NULL, 'link:batchDelete', 41, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (44, '编辑友情链接', 'button', NULL, 'link:edit,link:get', 41, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (45, '删除友情链接', 'button', NULL, 'link:delete', 41, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (46, '评论管理', 'menu', '/comments', 'comments', 40, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (47, '批量删除评论', 'button', NULL, 'comment:batchDelete', 46, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (48, '回复评论', 'button', NULL, 'comment:reply', 46, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (49, '审核评论', 'button', NULL, 'comment:audit', 46, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (50, '删除评论', 'button', NULL, 'comment:delete', 46, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (51, '模板管理', 'menu', '/templates', 'templates', 40, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (52, '添加模板', 'button', NULL, 'template:add', 51, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (53, '批量删除模板', 'button', NULL, 'template:batchDelete', 51, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (54, '编辑模板', 'button', NULL, 'template:edit,template:get', 51, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (55, '删除模板', 'button', NULL, 'template:delete', 51, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (56, '更新日志', 'menu', '/updates', 'updateLogs', 40, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (57, '添加更新日志', 'button', NULL, 'updateLog:add', 51, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (58, '批量删除更新日志', 'button', NULL, 'updateLog:batchDelete', 51, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (59, '编辑更新日志', 'button', NULL, 'updateLog:edit,updateLog:get', 51, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (60, '删除更新日志', 'button', NULL, 'updateLog:delete', 51, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (61, '公告管理', 'menu', '/notices', 'notices', 40, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (62, '添加公告', 'button', NULL, 'notice:add', 61, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (63, '批量删除公告', 'button', NULL, 'notice:batchDelete', 61, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (64, '编辑公告', 'button', NULL, 'notice:edit,notice:get', 61, 4, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (65, '删除公告', 'button', NULL, 'notice:delete', 61, 5, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (66, '发布公告', 'button', NULL, 'notice:release', 61, 6, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (67, '撤回公告', 'button', NULL, 'notice:withdraw', 61, 7, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (68, '测试页面', 'menu', '', '', 0, 6, 0, 1, 'fa fa-desktop', '2018-05-22 10:08:05', '2018-08-24 14:11:42');
+INSERT INTO `sys_resources` VALUES (69, 'icons图标', 'menu', '/icons', 'icons', 68, 2, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (70, 'shiro测试', 'menu', '/shiro', 'shiro', 68, 3, 0, 1, NULL, '2018-05-22 10:08:05', '2018-05-22 10:08:05');
+INSERT INTO `sys_resources` VALUES (71, '推送消息', 'menu', '/notice', 'notice', 40, NULL, 0, 1, '', '2018-06-26 16:16:51', '2018-06-26 16:16:51');
+INSERT INTO `sys_resources` VALUES (72, '实验室', 'menu', '', '', 0, 5, 0, 1, 'fa fa-flask', '2018-07-30 11:28:50', '2018-08-24 14:11:37');
+INSERT INTO `sys_resources` VALUES (73, '文章搬运工', 'menu', '/remover', 'remover', 72, NULL, 0, 1, '', '2018-08-17 21:16:24', '2018-08-17 21:22:58');
 
 
 -- ----------------------------

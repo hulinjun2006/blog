@@ -23,6 +23,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.zyd.blog.business.entity.Article;
 import com.zyd.blog.business.entity.Config;
+import com.zyd.blog.business.enums.ArticleStatusEnum;
 import com.zyd.blog.business.enums.BaiduPushTypeEnum;
 import com.zyd.blog.business.enums.ResponseStatus;
 import com.zyd.blog.business.service.BizArticleService;
@@ -36,8 +37,6 @@ import com.zyd.blog.util.UrlBuildUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.Logical;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -62,7 +61,7 @@ public class RestArticleController {
     private BizArticleService articleService;
     @Autowired
     private SysConfigService configService;
-    Logger log = LoggerFactory.getLogger(RestArticleController.class);
+
     @RequiresPermissions("articles")
     @PostMapping("/list")
     public PageResult list(ArticleConditionVO vo) {
@@ -136,5 +135,15 @@ public class RestArticleController {
             return ResultUtil.error(resultJson.getString("message"));
         }
         return ResultUtil.success(null, result);
+    }
+
+    @RequiresPermissions(value = {"article:publish"}, logical = Logical.OR)
+    @PostMapping(value = "/batchPublish")
+    public ResponseVO batchPublish(Long[] ids) {
+        if (null == ids) {
+            return ResultUtil.error(500, "请至少选择一条记录");
+        }
+        articleService.batchUpdateStatus(ids, true);
+        return ResultUtil.success("批量发布完成");
     }
 }

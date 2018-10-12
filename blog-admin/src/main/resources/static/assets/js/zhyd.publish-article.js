@@ -15,12 +15,9 @@ function loadType(){
             $.alert.ajaxSuccess(json);
             var data = '';
             if(data = json.data){
-                var typeOptions = '<option value="">选择分类</option>';
-                for(var i = 0, len = data.length; i < len; i ++){
-                    var type = data[i];
-                    typeOptions += '<option value="' + type.id + '">' + type.name + '</option>';
-                }
-                $("select#typeId").html(typeOptions);
+                var tpl = '<option value="">选择分类</option>{{#data}}<option value="{{id}}">{{name}}</option>{{#nodes}}<option value="{{id}}">  -- {{name}}</option>{{/nodes}}{{/data}}';
+                var html = Mustache.render(tpl, json);
+                $("select#typeId").html(html);
             }
             $("#refressType").removeClass("fa-spin");
             $.alert.showSuccessMessage("分类加载完成！");
@@ -92,17 +89,18 @@ if(articleId){
                 if(info['coverImage']){
                     $(".coverImage").attr('src', appConfig.qiniuPath + info['coverImage']);
                 }
-                if(info['contentMd']){
-                    $("#contentMd").val(info['contentMd']);
+                var contentMd = info['contentMd'];
+                if(contentMd){
+                    $("#contentMd").val(contentMd);
                     if(simplemde){
-                        simplemde.value(info['contentMd']);
+                        simplemde.value(contentMd);
                     }
                 }
-
-                if(info['content']){
-                    $("#content").val(info['content']);
+                var contentHtml = info['content'];
+                if(contentHtml){
+                    $("#content").val(contentHtml);
                     if(editor){
-                        editor.txt.html(info['content']);
+                        editor.txt.html(contentHtml);
                     }
                 }
                 $publishForm.find("input[type!=checkbox], select, textarea").each(function () {
@@ -121,7 +119,7 @@ $(".publishBtn").click(function () {
             type: "post",
             url: "/article/save",
             success: function (json) {
-                $.alert.ajaxSuccess(json, function () {
+                $.alert.ajaxSuccessConfirm(json, function () {
                     window.location.href = '/articles';
                 });
             },
