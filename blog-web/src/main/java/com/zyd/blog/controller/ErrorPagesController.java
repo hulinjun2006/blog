@@ -39,7 +39,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
- * 重写BasicErrorController,主要负责系统的异常页面的处理以及错误信息的显示
+ * 重写BasicErrorController,主要负责系统的异常页面的处理以及错误信息的显示hehe
  * <p/>
  * 此处指需要记录
  * <p/>
