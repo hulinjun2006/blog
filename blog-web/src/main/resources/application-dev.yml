@@ -1,7 +1,7 @@
 # Server settings
 server:
     tomcat:
-        basedir: /var/tmp/website-blog-web
+        basedir: D:/tmp/website-blog-web
 # SPRING PROFILES
 spring:
     datasource:
@@ -9,19 +9,19 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost:3306/dblog?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
         username: root
-        password: hulinjun12
+        password: hulinjun
     # 指定默认MimeMessage的编码，默认为: UTF-8
     mail:
         default-encoding: UTF-8
         # 指定SMTP server使用的协议，默认为: smtp
         protocol: smtp
         # 指定SMTP server host.
-        host: xxx.xxx.xxx
+        host: smtp.163.com
         port: 465
         # 指定SMTP server的用户名.
-        username: xxx@xxx.xxx
+        username: hulinjun2006@163.com
         # 指定SMTP server登陆密码:
-        password: xxx
+        password: qq3413520
         # 指定是否在启动时测试邮件服务器连接，默认为false
         test-connection: false
         properties:
@@ -38,7 +38,7 @@ spring:
 
 # logging settings
 logging:
-  path: /var/tmp/website-blog-web
+  path: D:/tmp/website-blog-web
 ####################################自定义配置##########################################
 app:
     # 是否启用kaptcha验证码
