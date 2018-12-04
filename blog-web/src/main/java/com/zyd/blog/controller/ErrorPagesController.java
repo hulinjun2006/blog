@@ -39,11 +39,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
- * 重写BasicErrorController,主要负责系统的异常页面的处理以及错误信息的显示hehe
+ * 重写BasicErrorController,主要负责系统的异常页面的处理以及错误信息的显示
  * <p/>
  * 此处指需要记录
  * <p/>
- * 要注意，这个类里面的代码一定不能有异常或者潜在异常发生，否则可能会让程序陷入死循环。
+ * 要注意，这个类里面的代码一定不能有异常或者潜在异常发生，否则可能会让程序陷入死循环。gtty
  * <p/>
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
